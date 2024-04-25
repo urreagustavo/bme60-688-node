@@ -1,0 +1,16 @@
+function decodeUplink(input) {
+  var temp = input.bytes[0];  
+  var hum_rel = input.bytes[1];    
+  var humo = input.bytes[2];     
+  var batv =  ((input.bytes[3]*100) + input.bytes[4])/100; 
+    return {
+    data: {
+      temp: temp,
+      hum_rel: hum_rel,
+      humo: humo,
+      batv: batv,
+    },
+    warnings: [],
+    errors: []
+  };
+}
